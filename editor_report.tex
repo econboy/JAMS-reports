@@ -1,3 +1,84 @@
+\documentclass[titlepage,12pt,letterpaper]{article}
+\usepackage{amsmath,amscd,amsthm,amsfonts,amssymb,amstext,bbm}
+\usepackage{geometry,lscape,graphicx,float,morefloats,pdflscape,accents,microtype}
+\usepackage{color,setspace,booktabs,bigstrut,enumerate,hyphenat,lscape,multirow}
+\usepackage{epstopdf,fancyhdr,parskip,subcaption,textcomp,srcltx,xcolor,xr}
+\usepackage[font={raggedright}, indentfirst=false]{quoting}
+\usepackage[titletoc,title]{appendix}
+%\usepackage[para,online,flushleft]{threeparttable}
+\usepackage[auth-sc,affil-sl]{authblk}
+\usepackage[format=hang]{caption}
+\usepackage{amsmath}
+
+\externaldocument[paper-]{manuscript_junji_sept2019}
+
+\usepackage{hyperref}
+%\definecolor{ultramarine}{RGB}{0,32,96}
+\hypersetup{colorlinks=TRUE,citecolor={blue} }
+\usepackage[round]{natbib}
+
+\renewcommand{\familydefault}{\rmdefault}
+\renewcommand*\rmdefault{cmr}
+
+\linespread{1.3}
+
+\setlength{\parindent}{0.2in}
+\newsavebox{\tablebox}
+
+\geometry{left=1in,right=1in,top=1in,bottom=1in}
+\setcounter{MaxMatrixCols}{20}
+\pagestyle{fancy}
+\fancyhead{}
+\fancyfoot{}
+\fancyhead[L]{}
+\fancyhead[C]{}
+\fancyhead[R]{}
+\fancyfoot[L]{}
+\fancyfoot[R]{\thepage}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+\numberwithin{equation}{section}
+
+
+
+\DeclareMathOperator*{\var}{var}
+\DeclareMathOperator*{\argmin}{arg\,min}
+\DeclareMathOperator*{\cov}{cov}
+\DeclareMathOperator*{\plim}{plim}
+\DeclareMathOperator*{\diag}{diag}
+\DeclareMathOperator*{\median}{median}
+\DeclareMathOperator*{\trace}{tr}
+\DeclareMathOperator{\vect}{Vec}
+\DeclareMathOperator{\MDA}{MDA}
+\allowdisplaybreaks
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{acknowledgement}{Acknowledgement}
+\newtheorem{algorithm}{Algorithm}
+\newtheorem{axiom}{Axiom}
+\newtheorem{assumption}{Assumption}
+\newtheorem{case}{Case}
+\newtheorem{claim}{Claim}
+\newtheorem{conclusion}{Conclusion}
+\newtheorem*{condition}{Condition}
+\newtheorem{conjecture}{Conjecture}
+\newtheorem{corollary}{Corollary}
+\newtheorem{criterion}{Criterion}
+\newtheorem{definition}{Definition}
+\newtheorem{example}{Example}
+%\newtheorem{exercise}{Exercise}
+\newtheorem{lemma}{Lemma}
+\newtheorem{notation}{Notation}
+\newtheorem{problem}{Problem}
+\newtheorem{proposition}{Proposition}
+\newtheorem{remark}{Remark}
+\newtheorem{solution}{Solution}
+\newtheorem{summary}{Summary}
+
+
+
+\bibliographystyle{elsarticle-harv}
+
 \begin{document}
 
 Re:  JAMS-D-20-00090, "Credit Card Fee-Waiving Policy Under Consumer Cognitive Biases"
@@ -47,11 +128,19 @@ The manuscript was reviewed by three highly knowledgeable reviewers. All the rev
 
 What you have here is an example of a multi-part tariff pricing situation. This can be a rather interesting pricing format to empirically test. However, you have a rather specific problem to address in testing it – self-selection bias. Without formally address this problem, it is difficult to put much faith in the results in the main study or in the counterfactual analysis. To address this problem, you would have to consider at least one of 3 approaches – propensity score matching, building a structural model, and/or running experiments (lab and/or field). You did not seem to consider any of those options in your analysis.
 
+\emph{Response}: we may consider to apply the propensity score matching (PSM) method to choose the control group. As for the dynamic issue, I will talk to an expert, Andrew Ching, but this will be beyond the scope of this paper. I will incorporate his comments and feedbacks into our response letter though. 
+
 Your hypotheses lack clarity. In many cases it is not even clear what your hypothesis is trying to test nor how you might carry out a formal empirical test of your hypotheses as they are written. Perhaps it would be useful to look more into the literature related to multi-part tariffs or on consumer financial decision-making to find a stronger theoretical foundation.
+
+\emph{Response}: This is fair enough. Actually, I just wrapped up the hypotheses in a short time. The hypotheses should be based on theory coming from literature. Also, the link between hypotheses and empirical methodology should be elaborated. I would suggest Liyuan to collect literature and polish the hypotheses and I will wrap up the empirical stragegy to test the hypotheses. 
 
 You need to spend some time rethinking your modeling framework if you are interested in explaining customer lifetime value. The CLV literature is fairly methodologically robust, so it would be worthwhile to consider using one of the many methodological frameworks to calculate and model CLV. Another option would be just to model the decision to churn. This would remove some of the hassles that may come with building and implementing CLV models.
 
+\emph{Response}: we can do both. I will review some literature about CLV and see if there are any models that we can follow. 
+
 You are attempting to test a behavioral construct (e.g., overconfidence) purely with secondary data. In order for you to provide a more convincing test, you may need stronger theoretical foundations or go to the lab and test more formally for some process evidence.
+
+\emph{Response}: this may be related to hyperbolic discounting behavior. If either of you have done that, we can follow this direction and undertake a lab experiment. I will suggest Liyin to carry out this experiment at Fudan, considering his expertise, time and budget constraints. 
 
 As mentioned earlier, I suggest you also go through the reviewers’ comments in detail as they each raise finer details that should be considered to improve upon the contribution of your research.
 
@@ -61,9 +150,13 @@ Reviewer #1: I read the paper with great interest as this seems a very relevant 
 As has been done in the modeling of choice of mobile-phone plans (e.g., Does Uncertainty Matter? Consumer Behavior Under Three-Part Tariffs, with Katja Seim and Bernd Skiera, Marketing Science, 26, 2007.) a structural model is needed to account for consumer's forward looking behavior in making these decisions. Clearly, the choice of a credit card is an endogenous decision and results in selection bias as consumers self-select into different cards. As this is NOT modeled and not even accounted for (maybe some IV method could have been tried), all results are suspect and the counterfactuals meaningless at this point.
 
 So I do not see a way forward that does not involve starting from zero with a new modeling framework and then one doesn't really know what the results would look like.
+
+\emph{Response}: this is a clear gesture that reviewer I will not let it go without seeing a structural model. A PSM will not satisfy him. If both of you agree with a dynamic model, I would suggest to invite another junior coauthor do the work. Considering my time constraint, I am afraid that i am not able to do the job. Without a dynamic model, any moderate revision will be a waste. However, I do not have any candidates for this job at this moment. 
+
+
   I must also say I am a bit surprised that a problem that seems the clear definition of selection bias (consumers self-select into different credit cards) doesn't really mention the endogeneity problem at the core of this issue anywhere prominently nor proposes ANY fix for it.
 
-
+\emph{Response}: I won't be surprised if I am a reviewer for JAMS. 
 
 Reviewer #2: This study focuses on understanding the effects of fee-structure mechanisms on customer retention and customer lifetime value. The authors employ a dataset from a credit card issuer and test their hypotheses using t-tests and a proportional hazard model. The simulation results while using different proposed policies are also presented. I find the topic interesting as it is always a crucial decision for credit card companies to decide what kind of fee structure to use to maximize the firm's bottom line. However, in the paper's current form, the conceptual development is weak and the empirical results are quite exploratory. Below I refer to these issues and make suggestions for improvement.
 1. 	The authors assume that only usage forecast affects the card choice decision and that usage regulation affects customer retention (in Figure 1). However, this framework does not fully reflect the consumer's decision process. For example, usage regulation differs depending on the kind of card a customer chooses. From what I understand, card choice is the first step in the decision and then after using the cards, the customer can see whether they met the usage regulation, which will lead the customer to decide whether to churn or stay with the firm. If they decide to stay, they can decide whether to switch to a new card or keep using the same one. These decisions will affect customer lifetime value overall.
